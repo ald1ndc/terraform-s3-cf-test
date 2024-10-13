@@ -6,11 +6,11 @@ terraform {
       version = "~> 5.31.0"
     }
   }
-  cloud {
-    organization = "aldin-test-org"
+  # cloud {
+  #   organization = "aldin-org"
 
-    workspaces {
-      name = "cloudfront-s3-ndev"
-    }
-  }
+  #   workspaces {
+  #     name = "cloudfront-s3-ndev"
+  #   }
+  # }
 }
