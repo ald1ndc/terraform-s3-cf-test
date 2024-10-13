@@ -1,11 +1,12 @@
 locals {
-  env           = "dev"
-  domain_prefix = "ce6-g2-cf"
+  env           = "prd"
+  domain_prefix = "jaz-cloudfront"
   zone_name     = "sctp-sandbox.com"
 }
 
 module "static_web_stack" {
   source = "../../modules/cloudfront-s3"
+
   env                 = local.env
   acm_certificate_arn = module.acm.acm_certificate_arn
   aliases             = ["${local.domain_prefix}-${local.env}.${local.zone_name}"]
@@ -32,7 +33,7 @@ module "static_web_stack" {
 #   }
 
 #   domain_name       = "${local.domain_prefix}-${local.env}.${local.zone_name}"
-#   zone_id           = data.aws_route53_zone.nonprod.zone_id
+#   zone_id           = data.aws_route53_zone.prod.zone_id
 #   validation_method = "DNS"
 # }
 
@@ -49,7 +50,7 @@ module "static_web_stack" {
 #       type = "A"
 #       alias = {
 #         name    = "${module.static_web_stack.cloudfront_domain}"
-#         zone_id = "3Z2FDTNDATAQYW2"
+#         zone_id = "Z2FDTNDATAQYW2"
 #       }
 #     },
 #   ]

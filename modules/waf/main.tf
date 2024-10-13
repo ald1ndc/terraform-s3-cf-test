@@ -28,7 +28,7 @@ resource "aws_wafv2_web_acl" "cloudfront" {
 
     visibility_config {
       cloudwatch_metrics_enabled = true
-      metric_name                = "jce6-g2-CommonRuleSet-${var.env}"
+      metric_name                = "ce6-g2-CommonRuleSet-${var.env}"
       sampled_requests_enabled   = true
     }
   }

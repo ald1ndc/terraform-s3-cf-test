@@ -10,7 +10,7 @@ terraform {
     organization = "aldin-test-org"
 
     workspaces {
-      name = "cloudfront-s3-ndev"
+      name = "cloudfront-s3-prod"
     }
   }
 }
